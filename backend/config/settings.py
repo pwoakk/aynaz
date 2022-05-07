@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # created apps
+    'backend.apps.products'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +65,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # created context processors
+                'backend.apps.products.category_context.get_categories'
             ],
         },
     },
