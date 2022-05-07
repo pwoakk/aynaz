@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container-fluid">
+		<div class="row fh5co-post-entry">
+			{% for product in products %}
+				<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+					<figure>
+						<a href="single.html"><img src="{{product.image.url}}" alt="Image" class="img-responsive" width="500px" height="500px"></a>
+					</figure>
+					<span class="fh5co-meta"><a href="single.html">{{product.category.name}}</a></span>
+					<h2 class="fh5co-article-title"><a href="single.html">{{product.name}}</a></h2>
+					<span class="fh5co-meta fh5co-date">{{product.created|date}}</span>
+				</article>
+			{% endfor %}
+
+			<div class="clearfix visible-xs-block"></div>
+			<div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
+
+
+		</div>
+	</div>
+
+{% endblock %}
